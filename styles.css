@@ -1,0 +1,45 @@
+body {
+  color: white;
+}
+
+.tour {
+  margin: 5% 0%;
+  background-image: url(./img/bckg-pic.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5%;
+  border-radius: 10px;
+}
+.tour .main-p {
+  margin: 0;
+}
+.tour .client-name {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px;
+}
+.tour .destination {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 30px 0px;
+}
+.tour .excursions, .tour .baggage {
+  gap: 15px;
+  padding: 0px 0px 30px 0px;
+}
+.tour .textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.about-client {
+  color: white;
+  margin: 5% 0%;
+  background-image: url(./img/bckg-about-pic.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5%;
+  border-radius: 10px;
+}/*# sourceMappingURL=styles.css.map */

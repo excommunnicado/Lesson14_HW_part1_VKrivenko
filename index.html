@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Не понимаю по  какой причине, но ссылка https://unpkg.com/vue@3/dist/vue.global.js не срабатывает-->
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>ДЗ Урок 14</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="tour">
+                <form action="#">
+                    <div class="d-flex justify-content-center align-items-right client-name">
+                        <label for="Ваше имя">Ваше имя</label>
+                        <input type="text" v-model="firstName" placeholder="Ваше имя">
+                        <label for="Ваша фамилия">Ваша фамилия</label>
+                        <input type="text" v-model="lastName" placeholder="Ваше фамилия">
+                        <label for="Ваше отчество">Ваше отчество</label>
+                        <input type="text" v-model="middleName" placeholder="Ваше отчество">
+                    </div>
+
+                    <div class="d-flex align-items-right destination">
+                        <p class="main-p">Куда отправитесь?</p>
+                        <select v-model="country" name="country" id="country">
+                            <option value="choose-opt">Выберите страну</option>
+                            <option value="Польша">Польша</option>
+                            <option value="Чехия">Чехия</option>
+                            <option value="Австрия">Австрия</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex excursions">
+                        <p class="main-p">Экскурсии:</p>
+                        <input type="checkbox" v-model="cityExcursion" value="Экскурсия по городу">Экскурсия по городу
+                        <label for="Экскурсия по городу"></label>
+                        <input type="checkbox" v-model="suburbExcursion">Экскурсия по пригороду
+                        <label for="Экскурсия по пригороду"></label>
+                        <input type="checkbox" v-model="withoutGuideExcursion">Экскурсия без гида
+                        <label for="Экскурсия без гида"></label>
+                    </div>
+
+                    <div class="d-flex baggage">
+                        <label>Багаж:</label>
+                        <input type="radio" value="Ручная кладь" v-model="baggage">Ручная кладь
+                        <label for="Ручная кладь"></label>
+                        <input type="radio" value="10 кг" v-model="baggage">10 кг
+                        <label for="10 кг"></label>
+                        <input type="radio" value="20 кг" v-model="baggage">20 кг
+                        <label for="20 кг"></label>
+                        <input type="radio" value="Без багажа" v-model="baggage">Без багажа
+                        <label for="Без багажа"></label>
+                    </div>
+
+                    <div class="main-textarea">
+                        <textarea v-model="comments" class="textarea"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="about-client">
+                <h3>Информация о клиенте:</h3>
+                <p class="about-client-p">Имя: {{ firstName }}</p>
+                <p class="about-client-p">Фамилия: {{ lastName }}</p>
+                <p class="about-client-p">Отчество: {{ middleName }}</p>
+                <p class="about-client-p">Направление: {{ country }}</p>
+                <p class="about-client-p">Экскурсии: {{ cityExcursion ? 'Экскурсия по городу ' : '' }}{{ suburbExcursion ? 'Экскурсия по пригороду ' : '' }}{{ withoutGuideExcursion ? 'Экскурсия без гида ' : '' }}</p>
+                <p class="about-client-p">Багаж: {{ baggage }}</p>
+                <p class="about-client-p">Комментарии: {{ comments }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
